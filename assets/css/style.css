@@ -2843,6 +2843,12 @@ h1, h2, h3, h4, h5, h6, .section-title .sub-title, .price-tab .nav-link span, .t
     z-index: 9;
     padding: 2px 0;
     position: relative; }
+  .main-header .logo img {
+    width: auto;
+    max-height: 56px; }
+    @media only screen and (max-width: 991px) {
+      .main-header .logo img {
+        max-height: 46px; } }
   .main-header.menu-absolute {
     position: absolute; }
   .main-header.fixed-header .header-upper {
@@ -2897,6 +2903,9 @@ h1, h2, h3, h4, h5, h6, .section-title .sub-title, .price-tab .nav-link span, .t
 
 .main-menu .mobile-logo {
   margin-right: auto; }
+  .main-menu .mobile-logo img {
+    width: auto;
+    max-height: 46px; }
   @media only screen and (max-width: 575px) {
     .main-menu .mobile-logo {
       max-width: 150px; } }
@@ -3259,7 +3268,7 @@ h1, h2, h3, h4, h5, h6, .section-title .sub-title, .price-tab .nav-link span, .t
       align-items: center;
       text-transform: uppercase; }
       .hero-section-two .hero-social a:not(:hover) {
-        color: #fefefe; }
+        color: #d6a354; }
       .hero-section-two .hero-social a:before {
         width: 5px;
         height: 5px;
@@ -3269,7 +3278,7 @@ h1, h2, h3, h4, h5, h6, .section-title .sub-title, .price-tab .nav-link span, .t
         transition: 0.5s;
         border-radius: 50%;
         margin-bottom: 12px;
-        background: rgba(255, 255, 255, 0.15); }
+        background: rgba(214, 163, 84, 0.4); }
       .hero-section-two .hero-social a:hover:before {
         background: #d6a354; }
       .hero-section-two .hero-social a i {
@@ -3280,7 +3289,7 @@ h1, h2, h3, h4, h5, h6, .section-title .sub-title, .price-tab .nav-link span, .t
       .hero-section-two .hero-social a span {
         font-family: "Oswald", sans-serif; }
   .hero-section-two .hero-left-image {
-    width: 12%;
+    width: 6%;
     top: 0;
     left: 70px;
     z-index: -1;
@@ -6150,7 +6159,10 @@ h1, h2, h3, h4, h5, h6, .section-title .sub-title, .price-tab .nav-link span, .t
   border-radius: 7px; }
   .ww-offer-item i {
     font-size: 55px;
-    line-height: 1;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
