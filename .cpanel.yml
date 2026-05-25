@@ -1,5 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/saloonuae/public_html/
-    - /bin/cp -af $TRAVIS_BUILD_DIR/. $DEPLOYPATH
+    - /bin/true
