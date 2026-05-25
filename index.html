@@ -72,11 +72,6 @@
 
 
 
-        <!-- Preloader -->
-
-        <div class="preloader"></div>
-
-
 
         <!-- main header -->
 
@@ -188,7 +183,7 @@
 
         <!-- Hero Section Start -->
 
-        <section class="hero-section-two rel z-1 py-235 rpy-100 bg-black" style="background-image: url(assets/images/shapes/lineX.png);">
+        <section class="hero-section-two rel z-1 py-235 rpy-100 bg-black" style="background-image: url(assets/images/shapes/lineX.png); padding-top: 120px; padding-bottom: 120px;">
 
             <div class="container">
 
@@ -196,13 +191,16 @@
 
                     <div class="col-xl-7 col-lg-8">
 
-                        <div class="hero-content rel z-1 style-two pt-90 rpt-65 text-white">
+                        <div class="hero-content rel z-1 style-two pt-30 rpt-30 text-white">
 
-                            <h1 class="wow fadeInUp delay-0-2s">Great Style. Great Haircuts. Awesome Barbers.</h1>
+                            <h1 class="wow fadeInUp delay-0-2s" style="font-size:52px; line-height:1.2;">Great Style. Great Haircuts. Awesome Barbers.</h1>
 
                             <p class="wow fadeInUp delay-0-4s">#1 Mobile Barber &amp; Gents Salon Services at Home in UAE - Fade, Shave &amp; Grooming Experts.</p>
 
-                            <a href="pricing.html" class="theme-btn wow fadeInUp delay-0-6s">book your service <i class="far fa-long-arrow-right"></i></a>
+                            <div class="d-flex flex-wrap gap-3 wow fadeInUp delay-0-6s" style="gap: 12px;">
+                                <a href="assets/Fade_and_Blade_Menu_Card_Print.pdf" download class="theme-btn"><i class="far fa-file-pdf"></i> download price list</a>
+                                <a href="pricing.html" class="theme-btn style-two">view all pricing <i class="far fa-long-arrow-right"></i></a>
+                            </div>
 
                         </div>
 
@@ -236,13 +234,100 @@
 
         <!-- Hero Section End -->
 
-        
+        <!-- Booking Bar Start -->
+        <div class="booking-bar-section">
+            <div class="container">
 
-        
+                <div class="text-center mb-35">
+                    <span class="sub-title">home service booking</span>
+                    <h3 class="title mt-10" style="font-size:1.6rem;">Select your services, choose your location &amp; book directly via WhatsApp</h3>
+                </div>
+
+                <div class="booking-bar">
+
+                    <!-- Services -->
+                    <div class="bb-seg bb-seg-services" id="bb-seg-svc">
+                        <div class="bb-seg-btn" id="bb-svc-btn" onclick="bbTogglePanel()">
+                            <i class="fas fa-cut bb-ico"></i>
+                            <div>
+                                <div class="bb-lbl">Services</div>
+                                <div class="bb-val" id="bb-svc-val">All treatments</div>
+                            </div>
+                            <i class="fas fa-chevron-down bb-caret" id="bb-svc-caret"></i>
+                        </div>
+                        <!-- Services Panel -->
+                        <div class="bb-panel" id="bb-svc-panel">
+                            <div class="bb-panel-scroll" id="bb-panel-scroll"></div>
+                            <div class="bb-panel-footer">
+                                <span class="bb-panel-total-label">Total: <strong>AED <span id="bb-panel-total">0</span></strong></span>
+                                <button class="bb-panel-done" onclick="closeBbPanel()">Done &#10003;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bb-divider"></div>
+
+                    <!-- Location -->
+                    <div class="bb-seg bb-seg-loc">
+                        <i class="fas fa-map-marker-alt bb-ico"></i>
+                        <div>
+                            <div class="bb-lbl">Location</div>
+                            <select class="bb-select" id="bb-loc">
+                                <option value="Dubai (Any Area)">Dubai (Any Area)</option>
+                                <option value="Silicon Oasis">Silicon Oasis</option>
+                                <option value="DIFC">DIFC</option>
+                                <option value="Al Barari">Al Barari</option>
+                                <option value="Emirates Hills">Emirates Hills</option>
+                                <option value="Arjan">Arjan</option>
+                                <option value="Dubai Hills Estate">Dubai Hills Estate</option>
+                                <option value="Arabian Ranches">Arabian Ranches</option>
+                                <option value="Town Square">Town Square</option>
+                                <option value="DAMAC Hills">DAMAC Hills</option>
+                                <option value="Downtown Dubai">Downtown Dubai</option>
+                                <option value="JBR / JLT">JBR / JLT</option>
+                                <option value="Palm Jumeirah">Palm Jumeirah</option>
+                                <option value="Jumeirah">Jumeirah</option>
+                                <option value="Mirdif">Mirdif</option>
+                                <option value="Deira / Bur Dubai">Deira / Bur Dubai</option>
+                                <option value="Sharjah">Sharjah</option>
+                                <option value="Abu Dhabi">Abu Dhabi</option>
+                                <option value="Other (specify in message)">Other (specify)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bb-divider"></div>
+
+                    <!-- Date -->
+                    <div class="bb-seg bb-seg-date">
+                        <i class="far fa-calendar-alt bb-ico"></i>
+                        <div>
+                            <div class="bb-lbl">Preferred Date</div>
+                            <input type="date" class="bb-date-inp" id="bb-date" />
+                        </div>
+                    </div>
+
+                    <!-- Book Button -->
+                    <button class="bb-book-btn" onclick="bbBook()">
+                        <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                    </button>
+
+                </div>
+
+                <!-- Selected services summary + total -->
+                <div class="bb-summary" id="bb-summary" style="display:none;">
+                    <div class="bb-summary-tags" id="bb-summary-tags"></div>
+                    <div class="bb-summary-total">Total Estimate: <strong>AED <span id="bb-summary-total">0</span></strong></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Booking Bar End -->
+
 
         <!-- Why Choose Area Start -->
 
-        <section class="why-choose-area pt-120 rpt-90 pb-100 rpb-70">
+        <section class="why-choose-three pt-120 rpt-90 pb-100 rpb-70">
 
             <div class="container">
 
@@ -250,11 +335,11 @@
 
                     <div class="col-xl-6 col-lg-7">
 
-                        <div class="section-title text-center mb-50">
+                        <div class="section-title text-center mb-65">
 
                             <h2 class="title">premium service at home</h2>
 
-                            <p>Experience premium grooming from the comfort of your home with Fade &amp; Blade Salon for Gents in Dubai.</p>
+                            <p>Experience premium grooming from the comfort of your home with Fade &amp; Blade in Dubai.</p>
 
                             <span class="sub-title">Features</span>
 
@@ -266,29 +351,21 @@
 
                 <div class="row justify-content-center">
 
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6 d-flex">
 
-                        <div class="service-two-item wow fadeInUp delay-0-2s">
+                        <div class="feature-item-two wow fadeInUp delay-0-2s">
 
-                            <div class="image">
-
-                                <img src="assets/images/services/service1.jpg" alt="Service">
-
-                            </div>
-
-                            <div class="heading">
-
-                                <i class="flaticon-scissors"></i><h3>Premium Service &amp; Personal Care</h3>
-
-                            </div>
-
-                            <div class="hover-content">
+                            <div class="icon">
 
                                 <i class="flaticon-scissors"></i>
 
-                                <h3><a href="service-details.html">Premium Service &amp; Personal Care</a></h3>
+                            </div>
 
-                                <p>Tailored, clean, and professional grooming delivered to your doorstep every time.</p>
+                            <div class="content">
+
+                                <h3><a href="service-details.html">Expert Certified Barbers</a></h3>
+
+                                <p>Trained and certified grooming specialists delivering sharp cuts and precision fades at your doorstep.</p>
 
                             </div>
 
@@ -296,29 +373,21 @@
 
                     </div>
 
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6 d-flex">
 
-                        <div class="service-two-item wow fadeInUp delay-0-4s">
+                        <div class="feature-item-two wow fadeInUp delay-0-4s">
 
-                            <div class="image">
-
-                                <img src="assets/images/services/service2.jpg" alt="Service">
-
-                            </div>
-
-                            <div class="heading">
-
-                                <i class="flaticon-beauty-treatment"></i><h3>Tools Of The Trade</h3>
-
-                            </div>
-
-                            <div class="hover-content">
+                            <div class="icon">
 
                                 <i class="flaticon-beauty-treatment"></i>
 
-                                <h3><a href="service-details.html">Tools Of The Trade</a></h3>
+                            </div>
 
-                                <p>From fade clippers to hot towel gear, we use trusted tools for sharp results.</p>
+                            <div class="content">
+
+                                <h3><a href="service-details.html">Premium Tools &amp; Products</a></h3>
+
+                                <p>We use professional-grade clippers, razors, and top skincare brands for every service.</p>
 
                             </div>
 
@@ -326,29 +395,43 @@
 
                     </div>
 
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6 d-flex">
 
-                        <div class="service-two-item wow fadeInUp delay-0-6s">
+                        <div class="feature-item-two wow fadeInUp delay-0-6s">
 
-                            <div class="image">
+                            <div class="icon">
 
-                                <img src="assets/images/services/service3.jpg" alt="Service">
-
-                            </div>
-
-                            <div class="heading">
-
-                                <i class="flaticon-straight-razor"></i><h3>Skilled &amp; Certified Barbers</h3>
+                                <i class="flaticon-home"></i>
 
                             </div>
 
-                            <div class="hover-content">
+                            <div class="content">
+
+                                <h3><a href="contact.html">At-Home Convenience</a></h3>
+
+                                <p>Book a slot and enjoy a full salon experience without stepping out of your home.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 d-flex">
+
+                        <div class="feature-item-two wow fadeInUp delay-0-2s">
+
+                            <div class="icon">
 
                                 <i class="flaticon-straight-razor"></i>
 
-                                <h3><a href="service-details.html">Skilled &amp; Certified Barbers</a></h3>
+                            </div>
 
-                                <p>Our team is trained, stylish, and ready to deliver clean cuts and crisp beards.</p>
+                            <div class="content">
+
+                                <h3><a href="service-beard.html">Beard &amp; Shave Specialists</a></h3>
+
+                                <p>Precision beard shaping, classic hot towel shaves, and signature grooming services.</p>
 
                             </div>
 
@@ -356,29 +439,43 @@
 
                     </div>
 
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-4 col-md-6 d-flex">
 
-                        <div class="service-two-item wow fadeInUp delay-0-8s">
+                        <div class="feature-item-two wow fadeInUp delay-0-4s">
 
-                            <div class="image">
+                            <div class="icon">
 
-                                <img src="assets/images/services/service2.jpg" alt="Service">
-
-                            </div>
-
-                            <div class="heading">
-
-                                <i class="flaticon-treatment"></i><h3>Full-Service Grooming</h3>
+                                <i class="flaticon-spa"></i>
 
                             </div>
 
-                            <div class="hover-content">
+                            <div class="content">
 
-                                <i class="flaticon-treatment"></i>
+                                <h3><a href="service-details.html">Facial &amp; Skin Care</a></h3>
 
-                                <h3><a href="service-details.html">Full-Service Grooming</a></h3>
+                                <p>Deep cleansing facials, DeTan treatments, and premium masks using Dr Renaud products.</p>
 
-                                <p>Haircuts, shaves, facials, and mani-care at home with zero hassle.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 d-flex">
+
+                        <div class="feature-item-two wow fadeInUp delay-0-6s">
+
+                            <div class="icon">
+
+                                <i class="flaticon-soap"></i>
+
+                            </div>
+
+                            <div class="content">
+
+                                <h3><a href="service-details.html">Hygiene &amp; Sanitised Tools</a></h3>
+
+                                <p>All tools are fully sanitised before every visit to ensure a safe and clean experience.</p>
 
                             </div>
 
@@ -394,9 +491,602 @@
 
         <!-- Why Choose Area End -->
 
-        
 
-        
+
+        <!-- Premium Service At Home Pricing Tab Start -->
+
+        <section id="services-pricing" class="pricing-area pt-120 rpt-90 pb-100 rpb-70 bg-lighter">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-xl-6 col-lg-7">
+
+                        <div class="section-title text-center mb-50">
+
+                            <h2 class="title">premium service at home</h2>
+
+                            <p>All services delivered at your doorstep by certified grooming specialists across Dubai.</p>
+
+                            <span class="sub-title">our services</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="price-tab-wrap p-40 bg-white">
+
+                    <ul class="nav nav-justified price-tab" role="tablist">
+
+                        <li class="nav-item">
+
+                            <a class="nav-link active" data-toggle="tab" href="#hs-hair">
+
+                                <i class="flaticon-beauty-salon"></i>
+
+                                <span>Signature Hair</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" data-toggle="tab" href="#hs-beard">
+
+                                <i class="flaticon-straight-razor"></i>
+
+                                <span>Beard Grooming</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" data-toggle="tab" href="#hs-color">
+
+                                <i class="flaticon-hair-dye"></i>
+
+                                <span>Color Treatments</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" data-toggle="tab" href="#hs-facial">
+
+                                <i class="flaticon-spa"></i>
+
+                                <span>Facial Treatments</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" data-toggle="tab" href="#hs-wax">
+
+                                <i class="flaticon-razor-blade"></i>
+
+                                <span>Waxing &amp; Spa</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" data-toggle="tab" href="#hs-hand">
+
+                                <i class="flaticon-massage"></i>
+
+                                <span>Hand &amp; Foot Care</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" data-toggle="tab" href="#hs-packages">
+
+                                <i class="flaticon-treatment"></i>
+
+                                <span>Signature Packages</span>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                    <div class="tab-content price-tab-content">
+
+                        <div class="tab-pane fade show active" id="hs-hair">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-2s">
+                                        <div class="content">
+                                            <h5>Haircut (30 Min)</h5>
+                                            <span>A precision cut tailored to your style and face shape using high-end tools for a sharp, clean finish.</span>
+                                        </div>
+                                        <span class="price">120د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-4s">
+                                        <div class="content">
+                                            <h5>Haircut - Skin Fade (45 Min)</h5>
+                                            <span>Expertly blended skin fade with crisp detailing for a modern, polished look.</span>
+                                        </div>
+                                        <span class="price">140د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-2s">
+                                        <div class="content">
+                                            <h5>Hairstyling (20 Min)</h5>
+                                            <span>Finished styles with professional-grade products for volume, hold, and lasting elegance.</span>
+                                        </div>
+                                        <span class="price">75د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-4s">
+                                        <div class="content">
+                                            <h5>Toppik Hairstyling (20 Min)</h5>
+                                            <span>Enhance hair density using Toppik fibers for a fuller, natural appearance.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-2s">
+                                        <div class="content">
+                                            <h5>Kidz Haircut (up to 12 yrs) (30 Min)</h5>
+                                            <span>Clean, stylish cuts for kids with a calm, professional touch.</span>
+                                        </div>
+                                        <span class="price">80د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-4s">
+                                        <div class="content">
+                                            <h5>Head Clean Shave (Razor) (30 Min)</h5>
+                                            <span>A smooth, traditional razor shave with soothing skincare products for a clean finish.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-2s">
+                                        <div class="content">
+                                            <h5>Snapshot Scalp Hair Treatment (15 Min)</h5>
+                                            <span>A quick and effective session targeting scalp health to stimulate hair growth and improve hair vitality.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-4s">
+                                        <div class="content">
+                                            <h5>Keratin Treatment (S/M) 1–12 inch (90 Min)</h5>
+                                            <span>Smoothing treatment for short to medium hair that reduces frizz, adds shine, and improves manageability.</span>
+                                        </div>
+                                        <span class="price">350د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-2s">
+                                        <div class="content">
+                                            <h5>Keratin Treatment (L) 12–16 inch (120 Min)</h5>
+                                            <span>Frizz-control and smoothing treatment for long hair, enhancing shine, softness, and manageability.</span>
+                                        </div>
+                                        <span class="price">450د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item wow fadeInUp delay-0-4s">
+                                        <div class="content">
+                                            <h5>Keratin Treatment (XL) above 16 inch (180 Min)</h5>
+                                            <span>Advanced smoothing for extra-long or voluminous hair, eliminating frizz and boosting shine for lasting results.</span>
+                                        </div>
+                                        <span class="price">850د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="hs-beard">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Beard Clean Shave (Razor) (30 Min)</h5>
+                                            <span>A classic, close shave using hot towel prep and luxury skincare products.</span>
+                                        </div>
+                                        <span class="price">75د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Signature Clean Shave (45 Min)</h5>
+                                            <span>A classic wet shave using British Barbers Association products, complete with hot and cold towels.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Beard Shaping (30 Min)</h5>
+                                            <span>Precise shaping and trimming tailored to your style, with your choice of hot or cold towel finish.</span>
+                                        </div>
+                                        <span class="price">60د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Signature Beard (45 Min)</h5>
+                                            <span>Expert beard shaping using British Barbers Association products, enhanced with hot and cold towels.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="hs-color">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Hair Dye (50 Min)</h5>
+                                            <span>Professional color application using high-quality Indola products for vibrant, long-lasting results.</span>
+                                        </div>
+                                        <span class="price">160د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Beard Dye (30 Min)</h5>
+                                            <span>Define and darken your beard with safe, high-quality Indola dye for a fuller, well-groomed look.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Fashion Colour (240 Min)</h5>
+                                            <span>Bold, vibrant shades expertly applied for a creative and standout look.</span>
+                                        </div>
+                                        <span class="price">500د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Snapshot Scalp Hair Treatment (15 Min)</h5>
+                                            <span>Quick, effective session targeting scalp health to stimulate hair growth and improve vitality.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="hs-facial">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Face Cleansing (30 Min)</h5>
+                                            <span>Quick revitalizing facial using Dr Renaud products for deep cleansing, hydration, and refresh.</span>
+                                        </div>
+                                        <span class="price">120د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Facial DeTan (45 Min)</h5>
+                                            <span>Revitalizing facial using Dr Renaud products with steamer and creamy mask for deep cleansing.</span>
+                                        </div>
+                                        <span class="price">160د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Signature Facial Treatment (60 Min)</h5>
+                                            <span>Luxurious facial using Dr Renaud products with steamer, mask, and Casmara peel for ultimate rejuvenation.</span>
+                                        </div>
+                                        <span class="price">200د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Charcoal Mask (20 Min)</h5>
+                                            <span>Deep-cleansing treatment that detoxifies, unclogs pores, and refreshes the skin.</span>
+                                        </div>
+                                        <span class="price">50د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Casmara Mask / Peel off Mask (30 Min)</h5>
+                                            <span>Premium peel-off mask that hydrates, soothes, and revitalizes the skin for a fresh, radiant glow.</span>
+                                        </div>
+                                        <span class="price">95د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="hs-wax">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Ear Wax (10 Min)</h5>
+                                            <span>Gentle removal of ear hair using professional waxing techniques.</span>
+                                        </div>
+                                        <span class="price">30د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Nose Wax (10 Min)</h5>
+                                            <span>Professional nose hair removal for a clean, groomed appearance.</span>
+                                        </div>
+                                        <span class="price">30د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Ear &amp; Nose Wax (20 Min)</h5>
+                                            <span>Complete ear and nose hair removal in one efficient session.</span>
+                                        </div>
+                                        <span class="price">50د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Full Face Wax (30 Min)</h5>
+                                            <span>Complete facial waxing for smooth skin and refined features.</span>
+                                        </div>
+                                        <span class="price">80د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Chest Wax (30 Min)</h5>
+                                            <span>Professional chest hair removal for a clean, defined look.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Back Wax (30 Min)</h5>
+                                            <span>Complete back hair removal for a smooth, groomed appearance.</span>
+                                        </div>
+                                        <span class="price">100د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Back &amp; Chest Wax (50 Min)</h5>
+                                            <span>Complete upper body waxing for a smooth, polished finish.</span>
+                                        </div>
+                                        <span class="price">175د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Chest Trimming (15 Min)</h5>
+                                            <span>Precise trimming of chest hair for a neat, controlled look.</span>
+                                        </div>
+                                        <span class="price">50د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Back Trimming (15 Min)</h5>
+                                            <span>Professional back hair trimming for a well-groomed appearance.</span>
+                                        </div>
+                                        <span class="price">50د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Arms Wax (30 Min)</h5>
+                                            <span>Complete arm hair removal for smooth, hairless skin.</span>
+                                        </div>
+                                        <span class="price">99د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Under Arms Wax (15 Min)</h5>
+                                            <span>Professional underarm hair removal for freshness and comfort.</span>
+                                        </div>
+                                        <span class="price">50د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Full Upper Body Wax (90 Min)</h5>
+                                            <span>Complete upper body waxing including chest, back, arms, and shoulders.</span>
+                                        </div>
+                                        <span class="price">250د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Full Face Threading (20 Min)</h5>
+                                            <span>Traditional threading for precise facial hair removal and definition.</span>
+                                        </div>
+                                        <span class="price">60د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Eyebrow Shape Up (15 Min)</h5>
+                                            <span>Professional eyebrow waxing for perfectly shaped, defined brows.</span>
+                                        </div>
+                                        <span class="price">30د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Head, Neck &amp; Shoulder Massage (20 Min)</h5>
+                                            <span>Relaxing massage targeting head, neck, and shoulders for tension relief.</span>
+                                        </div>
+                                        <span class="price">60د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Blackhead Removal Strips (10 Min)</h5>
+                                            <span>Quick, effective treatment to extract and remove blackheads for clear skin.</span>
+                                        </div>
+                                        <span class="price">20د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="hs-hand">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Manicure (30 Min)</h5>
+                                            <span>Professional manicure with nail care, shaping, and quality polish application for clean, groomed nails.</span>
+                                        </div>
+                                        <span class="price">90د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Pedicure (30 Min)</h5>
+                                            <span>Complete pedicure treatment including foot care, nail work, and polish for soft, well-groomed feet.</span>
+                                        </div>
+                                        <span class="price">110د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Manicure &amp; Pedicure (60 Min)</h5>
+                                            <span>Complete hand and foot care package with professional manicure and pedicure services in one session.</span>
+                                        </div>
+                                        <span class="price">160د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Nails Express (Trim Only) (30 Min)</h5>
+                                            <span>Quick nail trimming and shaping service for neat, well-maintained nails.</span>
+                                        </div>
+                                        <span class="price">90د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>Foot Massage (15 Min)</h5>
+                                            <span>Relaxing foot massage treatment to relieve tension and promote relaxation.</span>
+                                        </div>
+                                        <span class="price">45د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="hs-packages">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>4x Haircut/Skin Fade + Signature Beard (30 Days Rolling)</h5>
+                                            <span>Monthly package includes 4 haircuts or skin fades and 4 signature beard services.</span>
+                                        </div>
+                                        <span class="price">800د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>2x Manicure &amp; Pedicure (30 Days Rolling)</h5>
+                                            <span>Monthly package includes 2 complete manicure and pedicure sessions.</span>
+                                        </div>
+                                        <span class="price">280د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>1000 AED Prepay Credit (3 Months Validity)</h5>
+                                            <span>Get 1200 AED in credit value when you prepay 1000 AED. Extra 200 AED bonus!</span>
+                                        </div>
+                                        <span class="price">1000د.إ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="price-item">
+                                        <div class="content">
+                                            <h5>2000 AED Prepay Credit (6 Months Validity)</h5>
+                                            <span>Get 2600 AED in credit value when you prepay 2000 AED. Extra 600 AED bonus!</span>
+                                        </div>
+                                        <span class="price">2000د.إ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Premium Service At Home Pricing Tab End -->
+
+
 
         <!-- About Us Area Start -->
 
@@ -516,7 +1206,7 @@
 
                 <div class="row justify-content-center">
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small d-flex">
 
                         <div class="ww-offer-item wow fadeInUp delay-0-2s">
 
@@ -528,7 +1218,7 @@
 
                     </div>
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small d-flex">
 
                         <div class="ww-offer-item wow fadeInUp delay-0-3s">
 
@@ -540,7 +1230,7 @@
 
                     </div>
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small d-flex">
 
                         <div class="ww-offer-item wow fadeInUp delay-0-4s">
 
@@ -552,7 +1242,7 @@
 
                     </div>
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small d-flex">
 
                         <div class="ww-offer-item wow fadeInUp delay-0-5s">
 
@@ -564,7 +1254,7 @@
 
                     </div>
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small d-flex">
 
                         <div class="ww-offer-item wow fadeInUp delay-0-6s">
 
@@ -576,7 +1266,7 @@
 
                     </div>
 
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6 col-small d-flex">
 
                         <div class="ww-offer-item wow fadeInUp delay-0-7s">
 
@@ -674,7 +1364,39 @@
 
 
 
-       
+        <!-- QR Code / Stay Connected Start -->
+        <section class="qr-connect-area bg-black py-80 rpy-60">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-xl-4 col-lg-5 col-md-6 text-center wow fadeInLeft delay-0-2s">
+                        <a href="contact.html">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://fadeandblade.ae/contact.html&color=d6a354&bgcolor=1f1f1f&margin=10"
+                                 alt="Scan to Book - Fade &amp; Blade"
+                                 style="width:200px;height:200px;border-radius:10px;border:3px solid #d6a354;">
+                        </a>
+                        <p class="text-white mt-15 mb-0" style="font-size:13px;opacity:0.6;">Scan to visit our booking page</p>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-6 mt-30 rmt-30 wow fadeInRight delay-0-2s">
+                        <div class="section-title text-white">
+                            <span class="sub-title">connect with us</span>
+                            <h2 class="title">Stay Connected.<br>Earn Perks!</h2>
+                            <p>Follow us, scan the QR code, or reach out directly to book your premium home grooming experience.</p>
+                        </div>
+                        <ul class="list-unstyled mt-20 mb-20" style="display:flex;gap:14px;font-size:26px;">
+                            <li><a href="https://www.instagram.com/fadeandblade.dxb" target="_blank" rel="noopener" style="color:#d6a354;"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/fadeandblade.dxb" target="_blank" rel="noopener" style="color:#d6a354;"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.tiktok.com/@fadeandblade.dxb" target="_blank" rel="noopener" style="color:#d6a354;"><i class="fab fa-tiktok"></i></a></li>
+                            <li><a href="https://wa.me/971585887245" target="_blank" rel="noopener" style="color:#d6a354;"><i class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                        <p class="text-white mb-5" style="opacity:0.75;"><i class="fas fa-at" style="color:#d6a354;margin-right:6px;"></i>fadeandblade.dxb</p>
+                        <p class="text-white mb-0" style="opacity:0.75;"><i class="fas fa-phone" style="color:#d6a354;margin-right:6px;"></i>+971-58-588-7245</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- QR Code / Stay Connected End -->
+
+
 
         <!-- Gallery Area Start -->
 
@@ -844,12 +1566,6 @@
 
                         <div class="price-item-two wow fadeInUp delay-0-2s">
 
-                            <div class="image">
-
-                                <img src="assets/images/price/price-plan-icon.png" alt="Price">
-
-                            </div>
-
                             <h3>Signature Hair Services</h3>
 
                             <ul>
@@ -864,7 +1580,7 @@
 
                                     </div>
 
-                                    <span class="price">AED 99</span>
+                                    <span class="price">AED 120</span>
 
                                 </li>
 
@@ -878,7 +1594,7 @@
 
                                     </div>
 
-                                    <span class="price">AED 99</span>
+                                    <span class="price">AED 140</span>
 
                                 </li>
 
@@ -923,12 +1639,6 @@
                         <div class="price-item-two active-price wow fadeInUp delay-0-4s">
 
                             <span class="price-type">popular</span>
-
-                            <div class="image">
-
-                                <img src="assets/images/price/price-plan-icon.png" alt="Price">
-
-                            </div>
 
                             <h3>Beard Grooming &amp; Styling</h3>
 
@@ -1002,12 +1712,6 @@
 
                         <div class="price-item-two wow fadeInUp delay-0-6s">
 
-                            <div class="image">
-
-                                <img src="assets/images/price/price-plan-icon.png" alt="Price">
-
-                            </div>
-
                             <h3>Signature Packages</h3>
 
                             <ul>
@@ -1071,6 +1775,226 @@
                             </ul>
 
                             <a href="pricing.html" class="theme-btn style-three">book yours now <i class="far fa-long-arrow-right"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center mt-30">
+
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="price-item-two wow fadeInUp delay-0-2s">
+
+                            <h3>Colour Treatments</h3>
+
+                            <ul>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Hair Dye (50 Min)</h5>
+
+                                        <span>Full hair colour with premium dye products</span>
+
+                                    </div>
+
+                                    <span class="price">AED 160</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Beard Dye (30 Min)</h5>
+
+                                        <span>Natural beard colour for a refined look</span>
+
+                                    </div>
+
+                                    <span class="price">AED 100</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Fashion Colour (240 Min)</h5>
+
+                                        <span>Creative highlights and full fashion colouring</span>
+
+                                    </div>
+
+                                    <span class="price">AED 500</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Snapshot Scalp Treatment (15 Min)</h5>
+
+                                        <span>Targeted scalp treatment for healthy hair growth</span>
+
+                                    </div>
+
+                                    <span class="price">AED 100</span>
+
+                                </li>
+
+                            </ul>
+
+                            <a href="pricing.html" class="theme-btn style-three">view all services <i class="far fa-long-arrow-right"></i></a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="price-item-two active-price wow fadeInUp delay-0-4s">
+
+                            <h3>Facial Treatments</h3>
+
+                            <ul>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Face Cleansing (30 Min)</h5>
+
+                                        <span>Deep cleanse to clear pores and refresh skin</span>
+
+                                    </div>
+
+                                    <span class="price">AED 120</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Facial DeTan (45 Min)</h5>
+
+                                        <span>Removes tan and brightens your complexion</span>
+
+                                    </div>
+
+                                    <span class="price">AED 160</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Signature Facial (60 Min)</h5>
+
+                                        <span>Full facial with masks, serums, and massage</span>
+
+                                    </div>
+
+                                    <span class="price">AED 200</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Casmara / Peel Off Mask (30 Min)</h5>
+
+                                        <span>Professional-grade peel off mask treatment</span>
+
+                                    </div>
+
+                                    <span class="price">AED 95</span>
+
+                                </li>
+
+                            </ul>
+
+                            <a href="pricing.html" class="theme-btn style-three">view all services <i class="far fa-long-arrow-right"></i></a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="price-item-two wow fadeInUp delay-0-6s">
+
+                            <h3>Waxing, Spa &amp; Hand &amp; Foot Care</h3>
+
+                            <ul>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Full Face Wax (30 Min)</h5>
+
+                                        <span>Complete face waxing for smooth skin</span>
+
+                                    </div>
+
+                                    <span class="price">AED 80</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Back &amp; Chest Wax (50 Min)</h5>
+
+                                        <span>Full back and chest wax for a clean finish</span>
+
+                                    </div>
+
+                                    <span class="price">AED 175</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Manicure (30 Min)</h5>
+
+                                        <span>Professional nail shaping, buffing and care</span>
+
+                                    </div>
+
+                                    <span class="price">AED 90</span>
+
+                                </li>
+
+                                <li>
+
+                                    <div class="content">
+
+                                        <h5>Manicure &amp; Pedicure (60 Min)</h5>
+
+                                        <span>Complete hand and foot grooming session</span>
+
+                                    </div>
+
+                                    <span class="price">AED 160</span>
+
+                                </li>
+
+                            </ul>
+
+                            <a href="pricing.html" class="theme-btn style-three">view all services <i class="far fa-long-arrow-right"></i></a>
 
                         </div>
 
@@ -1428,23 +2352,18 @@
 
             <div class="container">
 
-                <div class="footer-newsletter-wrap bg-yellow p-50 py-40">
+                                <div class="footer-newsletter-wrap bg-yellow p-50 py-40">
 
                     <div class="section-title text-white wow fadeInLeft delay-0-2s">
 
-                        <h2 class="title mb-0">subscribe</h2>
+                        <h2 class="title mb-0">Book Your Appointment</h2>
+                        <p class="mt-5" style="opacity:.85; color:#fff;">Reserve your slot instantly via Fresha &mdash; quick, easy &amp; secure.</p>
 
                     </div>
 
-                    <div class="footer-newsletter wow fadeInRight delay-0-2s">
+                    <div class="footer-newsletter wow fadeInRight delay-0-2s" style="display:flex; align-items:center; justify-content:flex-end;">
 
-                        <form action="#">
-
-                            <input type="email" placeholder="Your Email" required>
-
-                            <button class="theme-btn">subscribe <i class="far fa-long-arrow-right"></i></button>
-
-                        </form>
+                        <a href="https://www.fresha.com/a/fade-and-blade-gents-barber-home-service-silicon-oasis-difc-al-barari-emirates-hills-arjan-dubai-hills-estate-arabian-ranches-town-square-damac-hills-evi3p8fz" rel="nofollow noopener" target="_blank" class="theme-btn style-two">Book Now on Fresha &nbsp;<i class="far fa-long-arrow-right"></i></a>
 
                     </div>
 
@@ -1675,6 +2594,7 @@
     <!-- Custom script -->
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/booking-widget.js"></script>
 
 
 

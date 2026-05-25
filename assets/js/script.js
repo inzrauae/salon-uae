@@ -322,8 +322,8 @@
         }
         
         
-        // 15. Nice Select
-        $('select').niceSelect();
+        // 15. Nice Select (exclude booking bar select)
+        $('select').not('.bb-select').niceSelect();
         
         
         // 16. WOW Animation
@@ -337,8 +337,66 @@
             });
             wow.init();
         }
-        
-        
+
+
+        /* 18. WhatsApp Live Chat Widget */
+        (function () {
+            var waNumber = '971585887245';
+            var inquiries = [
+                'Haircut & Fade',
+                'Beard Grooming',
+                'Facial & Skin Care',
+                'Pricing & Packages',
+                'Book an Appointment'
+            ];
+
+            var chips = inquiries.map(function (q) {
+                return '<a class="wa-chip" href="https://wa.me/' + waNumber + '?text=' + encodeURIComponent('Hi! I\'d like to inquire about: ' + q) + '" target="_blank" rel="noopener">' + q + '</a>';
+            }).join('');
+
+            var widgetHTML = '<div id="wa-chat-widget">'
+                + '<div id="wa-chat-popup" aria-label="WhatsApp Chat">'
+                + '<div class="wa-popup-header">'
+                + '<div class="wa-popup-avatar"><i class="fab fa-whatsapp"></i></div>'
+                + '<div class="wa-popup-info"><strong>Fade &amp; Blade</strong><span>Typically replies within minutes</span></div>'
+                + '<button class="wa-close-btn" aria-label="Close">&times;</button>'
+                + '</div>'
+                + '<div class="wa-popup-body">'
+                + '<div class="wa-bubble">👋 Hi there! How can we help you today? Pick a topic or send us a message on WhatsApp.</div>'
+                + '<div class="wa-chips">' + chips + '</div>'
+                + '</div>'
+                + '<div class="wa-popup-footer">'
+                + '<a href="https://wa.me/' + waNumber + '?text=' + encodeURIComponent('Hi! I\'d like to inquire about your salon services at Fade & Blade.') + '" target="_blank" rel="noopener" class="wa-start-btn"><i class="fab fa-whatsapp"></i> Start Chat</a>'
+                + '</div>'
+                + '</div>'
+                + '<button id="wa-fab" aria-label="Chat with us on WhatsApp"><i class="fab fa-whatsapp"></i><span class="wa-fab-label">Chat with us</span></button>'
+                + '</div>';
+
+            $('body').append(widgetHTML);
+
+            $('#wa-fab').on('click', function () {
+                var popup = $('#wa-chat-popup');
+                if (popup.hasClass('wa-popup-open')) {
+                    popup.removeClass('wa-popup-open');
+                    $(this).removeClass('wa-notify');
+                } else {
+                    popup.addClass('wa-popup-open');
+                    $(this).removeClass('wa-notify');
+                }
+            });
+
+            $('.wa-close-btn').on('click', function () {
+                $('#wa-chat-popup').removeClass('wa-popup-open');
+            });
+
+            setTimeout(function () {
+                if (!$('#wa-chat-popup').hasClass('wa-popup-open')) {
+                    $('#wa-fab').addClass('wa-notify');
+                }
+            }, 4000);
+        })();
+
+
     });
     
     
